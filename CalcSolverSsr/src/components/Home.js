@@ -45,6 +45,9 @@ export class Home extends Component {
           <li>
             <Link to="/date-difference-calculator">Date Difference Calculator</Link>
           </li>
+          <li>
+            <Link to="/weight-converter">Weight Converter</Link>
+          </li>
         </ul>
       </div>
     );

@@ -1,0 +1,48 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+#footer {
+    min-height: 100px;
+    background-color: #dddddd;
+}
+
+#footer .row {
+    margin: 50px 0 0 0;
+}
+
+#footer a:link {
+        color: black;
+}
+
+#footer a:visited {
+        color: black;
+}
+
+#footer a:hover {
+        color: black;
+}
+
+#footer a:active {
+    color: black;
+}
+
+#footer ul {
+    list-style-type: none;
+    padding: 25px 25px;
+}
+
+#footer li {
+    line-height: 30px;
+}

@@ -30,7 +30,7 @@ jobs:
         cd ..
 
     - name: 'Tar files'
-      run: tar -cvf my_files.tar .\CalcSolverSsr
+      run: tar -cvf my_files.tar .\CalcSolverSsr\CalcSolverSsr
     
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
@@ -51,7 +51,7 @@ jobs:
       with:
         name: node-app
         
-    - name: 'Tar files'
+    - name: 'UnTar files'
       run: tar -xvf my_files.tar
 
     - name: 'Deploy to Azure Web App'

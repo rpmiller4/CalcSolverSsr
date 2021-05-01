@@ -53,4 +53,4 @@ jobs:
         app-name: 'CalcSolverSsr'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f3d7799175e43788f99a6a6a1f96ac8 }}
-        package: .
+        package: ./CalcSoverSsr/

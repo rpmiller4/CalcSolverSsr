@@ -5,11 +5,11 @@ RUN mkdir -p /app
 WORKDIR /app
 ENV NODE_ENV production
 
-COPY package.json ./
+COPY CalcSolverSsr/package.json ./
 RUN npm install --production
 
-COPY src ./src
-COPY public ./public
+COPY CalcSolverSsr/src ./src
+COPY CalcSolverSsr/public ./public
 RUN npm run build -y
 
 

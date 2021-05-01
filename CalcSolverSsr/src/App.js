@@ -13,6 +13,7 @@ import { ImageAnalyzer } from './components/Analyzers/ImageAnalyzer';
 import { StrongPasswordGenerator } from './components/StrongPasswordGenerator';
 import { TemperatureConverter } from './components/Converters/TemperatureConverter';
 import { DateDifference } from './components/DateCalculators/DateDifference';
+import { WeightConverter } from './components/Converters/WeightConverter'
 import './custom.css'
 
 export default class App extends Component {
@@ -33,6 +34,7 @@ export default class App extends Component {
         <Route path='/image-analyzer' component={ImageAnalyzer} />
         <Route path='/temperature-converter' component={TemperatureConverter} />
         <Route path='/date-difference-calculator' component={DateDifference} />
+        <Route path='/weight-converter' component={WeightConverter} />
       </Layout>
     );
   }

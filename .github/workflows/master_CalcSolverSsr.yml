@@ -30,7 +30,7 @@ jobs:
         cd ..
 
     - name: 'Tar files'
-      run: tar -cvf my_files.tar D:\a\CalcSolverSsr\CalcSolverSsr\CalcSolverSsr\
+      run: tar -cvf my_files.tar .
     
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2

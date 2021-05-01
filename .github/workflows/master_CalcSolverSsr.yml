@@ -30,9 +30,7 @@ jobs:
         cd ..
 
     - name: 'Tar files'
-      run: |
-        cd .\CalcSolverSsr\build
-        tar -cvf my_files.tar .
+      run: tar -cvf my_files.tar .
     
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
@@ -64,3 +62,9 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f3d7799175e43788f99a6a6a1f96ac8 }}
         package: .
+        
+    - name: yarn
+      run: |
+        cd CalcSolverSsr
+        yarn start
+        cd ..

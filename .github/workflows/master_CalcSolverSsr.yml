@@ -52,7 +52,7 @@ jobs:
         name: node-app
         
     - name: 'Tar files'
-      run: tar -zvf my_files.tar
+      run: tar -xvf my_files.tar
 
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp

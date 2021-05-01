@@ -53,7 +53,13 @@ jobs:
         
     - name: 'UnTar files'
       run: tar -xvf my_files.tar
-
+      
+    - name: yarn
+      run: |
+        cd CalcSolverSsr
+        yarn start
+        cd ..
+        
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
@@ -63,8 +69,4 @@ jobs:
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f3d7799175e43788f99a6a6a1f96ac8 }}
         package: .
         
-    - name: yarn
-      run: |
-        cd CalcSolverSsr
-        yarn start
-        cd ..
+

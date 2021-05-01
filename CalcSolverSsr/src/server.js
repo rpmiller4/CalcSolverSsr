@@ -41,8 +41,9 @@ server
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
-        <title>Welcome to Razzle</title>
+        <title>Calc-Solver.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script data-ad-client="ca-pub-0582294658998240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         ${cssLinksFromAssets(assets, 'client')}
     </head>
     <body>

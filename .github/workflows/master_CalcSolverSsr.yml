@@ -23,15 +23,20 @@ jobs:
 
     - name: npm install, build, and test
       run: |
+        cd CalcSolverSsr
         npm install
         npm run build --if-present
         npm run test --if-present
+        cd ..
 
+    - name: 'Tar files'
+      run: tar -cvf my_files.tar .
+    
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: node-app
-        path: .
+        path: my_files.tar
 
   deploy:
     runs-on: windows-latest
@@ -45,7 +50,16 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: node-app
-
+        
+    - name: 'UnTar files'
+      run: tar -xvf my_files.tar
+      
+    - name: yarn
+      run: |
+        cd CalcSolverSsr
+        yarn start
+        cd ..
+        
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
@@ -54,3 +68,5 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f3d7799175e43788f99a6a6a1f96ac8 }}
         package: .
+        
+

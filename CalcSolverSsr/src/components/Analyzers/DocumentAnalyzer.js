@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
+import { Helmet } from "helmet";
 
 export class DocumentAnalyzer extends Component {
   static displayName = DocumentAnalyzer.name;

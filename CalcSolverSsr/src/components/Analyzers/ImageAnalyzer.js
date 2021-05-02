@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
 import EXIF from 'exif-js';
+import { Helmet } from "react-helmet";
 const blankImage = require("../../images/blank.jpg");
+
 
 export class ImageAnalyzer extends Component {
   static displayName = ImageAnalyzer.name;
@@ -61,9 +63,13 @@ export class ImageAnalyzer extends Component {
   renderMiddle() {
     return (
       <div>
-        <h3>Analyze Documents</h3>
+        <Helmet>
+          <title>Image Analyzer</title>
+          <meta name='description' content='Extract Exif Data and other data from any image.' />
+        </Helmet>
+        <h3>Analyze Images</h3>
         <h4>Features</h4>
-        <p>Copy and paste into the textarea to the left to get character counts, word counts. An upcoming feature will allow open-ended questions on arbitrary documents.</p>
+        <p>Select an image to get a readout of its Exif Data. Exif data might include geotagging - where a picture was taken, as well as focal length, whether flash was triggered and other image metadata.</p>
       </div>
     );
   }

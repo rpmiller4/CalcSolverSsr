@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer"
+import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer";
+import { Helmet } from "react-helmet";
 
 export class BayesTheorem extends Component {
   static displayName = BayesTheorem.name;
@@ -73,6 +74,10 @@ export class BayesTheorem extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Bayes Theorem Calculator</title>
+          <meta name='description' content='Calculate conditional probability using Bayes Theorem.' />
+        </Helmet>
         <h3>Calculate the probability of P(A|B)</h3>
         <p>Calculate the probability P(A|B) based on P(B), P(A), and P(B|A). The notation P(A) means "the probability of A" and the notation P(A|B) translates to "the probability of A given B". In clearer language, this is the probability of an event A happening based on B also being true.</p>
         <p>Bayes' Theorem deals with conditional probability. Specifically, what is the probability of one event knowing that another potentially related event has been observed.</p>

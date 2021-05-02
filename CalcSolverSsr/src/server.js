@@ -3,6 +3,7 @@ import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
+import { Helmet } from 'react-helmet';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -32,21 +33,25 @@ server
       </StaticRouter>
     );
 
+    const helmet = Helmet.renderStatic();
+
     if (context.url) {
       res.redirect(context.url);
     } else {
       res.status(200).send(
         `<!doctype html>
-    <html lang="">
+    <html lang="en" ${helmet.htmlAttributes.toString()}>
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
-        <title>Calc-Solver.com</title>
+        ${helmet.title.toString()}
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}
         <script data-ad-client="ca-pub-0582294658998240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         ${cssLinksFromAssets(assets, 'client')}
     </head>
-    <body>
+    <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${markup}</div>
         ${jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin')}
     </body>

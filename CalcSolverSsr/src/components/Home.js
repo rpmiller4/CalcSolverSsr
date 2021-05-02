@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export class Home extends Component {
   static displayName = Home.name;
@@ -7,6 +8,10 @@ export class Home extends Component {
   render () {
     return (
       <div>
+        <Helmet>
+          <title>Calc Solver - High Impact Calculators and Online Tools</title>
+          <meta name='description' content='This site contains calculators and high-impact tooling for various scenarios like automated text summarization and image analysis.' />
+        </Helmet>
         <h1>Calc-Solver.com</h1>
         <p>This site contains various tools that we've found useful.</p>
         <ul>

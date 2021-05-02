@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer"
-import { TextControl } from "../controls/Input"
+import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
+import { TextControl } from "../controls/Input";
+import { Helmet } from "react-helmet";
 
 export class WeightConverter extends Component {
   static displayName = WeightConverter.name;
@@ -46,6 +47,10 @@ export class WeightConverter extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Weight Calculator</title>
+          <meta name='description' content='Convert between Kilograms (kg) and Pounds (lbs) easily.' />
+        </Helmet>
         <h3>Convert between Kilograms and Pounds</h3>
         <p>A pound is an imperial unit of mass equivalent to exactly 0.45359237 kilograms. To convert from kilograms to pounds the kilogram units can be multiplied by 2.2046226218.</p>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from './Layout/ThreeColumnContainer'
+import { ThreeColumnContainer } from './Layout/ThreeColumnContainer';
+import { Helmet } from 'react-helmet';
 
 export class RandomNumberGenerator extends Component {
   static displayName = RandomNumberGenerator.name;
@@ -110,6 +111,10 @@ export class RandomNumberGenerator extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Random Number Generator</title>
+          <meta name='description' content='Generate Random Numbers between 0 and 1 or any other range.' />
+        </Helmet>
         <h3>Generate pseudo-random numbers</h3>
         <p>On the left select a minimum and maximum value, and click the button to get a random number in between.
           Some use cases include simulating a coin flip, a six-sided die or a 200-sided die.</p>

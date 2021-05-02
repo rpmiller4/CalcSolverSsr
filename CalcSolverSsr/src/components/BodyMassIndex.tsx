@@ -1,3 +1,4 @@
+// @ts-ignore
 import React, {useEffect, useState} from "react";
 
 const BodyMassIndex = () => {
@@ -19,19 +20,17 @@ const BodyMassIndex = () => {
 
     const updateBmi = () => {
         let newWeight;
-        if (massUnit !== 'kg') {
-            newWeight = convertPoundsToKilograms(weight)
-
-        } else {
+        if (massUnit === 'kg') {
             newWeight = weight
+        } else {
+            newWeight = convertPoundsToKilograms(weight)
         }
         let newHeight
-        if (heightUnit !== 'cm') {
-            newHeight = convertInchesToCentimeters(height)
-        } else {
+        if (heightUnit === 'cm') {
             newHeight = height
+        } else {
+            newHeight = convertInchesToCentimeters(height)
         }
-
 
         setBmi(newWeight / Math.pow(newHeight / 100, 2))
     }
@@ -51,11 +50,7 @@ const BodyMassIndex = () => {
                 <div className="input-group-prepend">
                     <span className="input-group-text">Weight</span>
                 </div>
-                <input className="form-control"
-                       type="number"
-                       min="0"
-                       value={weight}
-                       onChange={event => {
+                <input className="form-control" type="number" min="0" value={weight} onChange={event => {
                            setWeight(+event.target.value)
 
                        }}/>
@@ -71,11 +66,7 @@ const BodyMassIndex = () => {
                 <div className="input-group-prepend">
                     <span className="input-group-text">Height</span>
                 </div>
-                <input className="form-control"
-                       type="number"
-                       min="0"
-                       value={height}
-                       onChange={event => {
+                <input className="form-control" type="number" min="0" value={height} onChange={event => {
                            setHeight(+event.target.value)
                        }}/>
                 <select className="custom-select col-2" value={heightUnit} onChange={event => {

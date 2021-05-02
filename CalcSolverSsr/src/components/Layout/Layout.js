@@ -9,7 +9,7 @@ export class Layout extends Component {
   render () {
     return (
       <div>
-        <div class="wrapper" style={{ 'min-height': '80vh' }}>
+        <div className="wrapper" style={{ 'minHeight': '80vh' }}>
           <NavMenu />
           <Container>
             {this.props.children}

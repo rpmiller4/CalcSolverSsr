@@ -60,6 +60,10 @@ export class DocumentAnalyzer extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Word and Character Count Calculator</title>
+          <meta name='description' content='Copy and Paste any text document to get the number of words and characters.' />
+        </Helmet>
         <h3>Analyze Documents</h3>
         <h4>Features</h4>
         <p>Copy and paste into the textarea to the left to get character counts, word counts. Character count limits come up on Twitter and text messages where the character count limits are 280 and 160 characters respectively.</p>

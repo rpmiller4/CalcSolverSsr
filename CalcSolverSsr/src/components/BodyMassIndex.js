@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer"
+import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer";
+import { Helmet } from 'react-helmet';
 
 export class BodyMassIndex extends Component {
   static displayName = BodyMassIndex.name;
@@ -65,7 +66,6 @@ export class BodyMassIndex extends Component {
 
   }
   
-
   renderLeft() {
     return (
       <div>
@@ -99,6 +99,10 @@ export class BodyMassIndex extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Body Mass Index (BMI) Calculator</title>
+          <meta name='description' content='Calculate your BMI or Body Mass Index easily.' />
+        </Helmet>
         <h3>Calculate a body mass index (BMI)</h3>
         <p>The formula for calculating body mass index is mass divided by height squared when measured in kg/m^2. A typical healthy BMI ranges around 18.5 - 24.9 kg/m^2, but may vary widely for people who exercise professionally. BMI values below 18.5 are interpreted as underweight and values over 24.9 as overweight, and obese when over 30.</p>
       </div>
@@ -106,7 +110,6 @@ export class BodyMassIndex extends Component {
   }
 
   render() {
-
     return (
       <div>
         <ThreeColumnContainer

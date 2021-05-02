@@ -1,7 +1,8 @@
 import React, { Component  } from 'react';
 import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from 'react-helmet';
 
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
@@ -43,6 +44,10 @@ export class DateDifference extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Date Difference Calculator</title>
+          <meta name='description' content='Calculate the number of days between two calendar dates.' />
+        </Helmet>
         <h3>Calculate the number of days between two calendar dates.</h3>
         <p></p>
       </div>

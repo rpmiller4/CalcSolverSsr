@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer"
-import { TextControl } from "../controls/Input"
+import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
+import { TextControl } from "../controls/Input";
+import { Helmet } from "react-helmet";
 
 export class TemperatureConverter extends Component {
   static displayName = TemperatureConverter.name;
@@ -46,6 +47,10 @@ export class TemperatureConverter extends Component {
   renderMiddle() {
     return (
       <div>
+        <Helmet>
+          <title>Temperature Converter - Fahrenheit To Celsius</title>
+          <meta name='description' content='Convert between Fahrenheit And Celsius easily.' />
+        </Helmet>
         <h3>Convert between Celsius and Fahrenheit</h3>
         <p></p>
       </div>

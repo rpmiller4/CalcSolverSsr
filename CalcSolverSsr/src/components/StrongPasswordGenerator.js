@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer"
+import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer";
+import { Helmet } from 'react-helmet';
 
 export class StrongPasswordGenerator extends Component {
   static displayName = StrongPasswordGenerator.name;
@@ -26,6 +27,10 @@ export class StrongPasswordGenerator extends Component {
   renderLeft() {
     return (
       <div>
+        <Helmet>
+          <title>Strong Password Generator</title>
+          <meta name='description' content='Generate Strong Passwords' />
+        </Helmet>
         <h1>Strong Password Generator</h1>
         <button className="btn btn-outline-primary" onClick={() => this.generatePassword()}>Generate Password</button>
         <h2>{this.state.generatedPassword}</h2>

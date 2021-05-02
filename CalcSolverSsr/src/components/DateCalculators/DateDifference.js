@@ -43,7 +43,7 @@ export class DateDifference extends Component {
   renderMiddle() {
     return (
       <div>
-        <h3>Convert between Celsius and Fahrenheit</h3>
+        <h3>Calculate the number of days between two calendar dates.</h3>
         <p></p>
       </div>
     );

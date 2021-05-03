@@ -67,13 +67,9 @@ const BodyMassIndex = () => {
                     <div className="input-group-prepend">
                         <span className="input-group-text">Weight</span>
                     </div>
-                    <input className="form-control" type="number" min="0" value={weight} onChange={event => {
-                        setWeight(+event.target.value)
-                    }}/>
+                    <input className="form-control" type="number" min="0" value={weight} onChange={event => {setWeight(+event.target.value)}}/>
                     <select className="custom-select col-2" value={massUnit}
-                            onChange={event => {
-                                setMassUnit(event.target.value)
-                            }}>
+                            onChange={event => {setMassUnit(event.target.value)}}>
                         <option defaultValue={"lbs"} value="lbs">lbs</option>
                         <option value="kg">kg</option>
                     </select>
@@ -82,12 +78,8 @@ const BodyMassIndex = () => {
                     <div className="input-group-prepend">
                         <span className="input-group-text">Height</span>
                     </div>
-                    <input className="form-control" type="number" min="0" value={height} onChange={event => {
-                        setHeight(+event.target.value)
-                    }}/>
-                    <select className="custom-select col-2" value={heightUnit} onChange={event => {
-                        setHeightUnit(event.target.value)
-                    }}>
+                    <input className="form-control" type="number" min="0" value={height} onChange={event => {setHeight(+event.target.value)}}/>
+                    <select className="custom-select col-2" value={heightUnit} onChange={event => {setHeightUnit(event.target.value)}}>
                         <option defaultValue={"inches"} value="inches">inches</option>
                         <option value="cm">cm</option>
                     </select>

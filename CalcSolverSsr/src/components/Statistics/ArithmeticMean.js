@@ -49,8 +49,9 @@ export class ArithmeticMean extends Component {
           <title>Arithmetic Mean Calculator</title>
           <meta name='description' content='Copy and Paste a set of numbers to get the average or arithmetic mean along with other statistics.' />
         </Helmet>
-        <h3>Analyze Sets of Numbers</h3>
-        <p>Copy and paste into the textarea to the left to get statistics about a given distribution.</p>
+        <h3>Arithmetic Mean or Average</h3>
+        <p>The arithmetic mean, or 'average' is the sum of all the numbers in a set divided by the count of numbers in that set. The average is used to summarize or describe the tendency of that collection, usually from an experiment or study.</p>
+        <p>Because the average is so easily skewed by outliers, sometimes the median is used to describe a collection of numbers instead.</p>
       </div>
     );
   }

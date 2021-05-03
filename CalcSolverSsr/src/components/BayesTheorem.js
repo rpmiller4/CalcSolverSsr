@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ThreeColumnContainer } from "./Layout/ThreeColumnContainer";
 import { Helmet } from "react-helmet";
+import { TextControl } from "./controls/Input";
 
 export class BayesTheorem extends Component {
   static displayName = BayesTheorem.name;
@@ -37,36 +38,10 @@ export class BayesTheorem extends Component {
       <div>
         <h1>Bayes Theorem Calculator</h1>
         <h2>Calculate the probability of P(A|B)</h2>
-        <div className="input-group">
-          <div className="input-group-prepend">
-            <span className="input-group-text">P(A):</span>
-          </div>
-          <input className="form-control" type="number" value={this.state.pA} onChange={this.updatePA} />
-          <div className="input-group-append">
-            <span className="input-group-text">%</span>
-          </div>
-        </div>
-        <div className="input-group">
-          <div className="input-group-prepend">
-            <span className="input-group-text">P(B):</span>
-          </div>
-          <input className="form-control" type="number" value={this.state.pB} onChange={this.updatePB} />
-          <div className="input-group-append">
-            <span className="input-group-text">%</span>
-          </div>
-        </div>
-        <div>
-        <div className="input-group">
-          <div className="input-group-prepend">
-            <span className="input-group-text">P(B|A):</span>
-          </div>
-          <input className="form-control" type="number" value={this.state.pBGivenA} onChange={this.updatePBGivenA} />
-          <div className="input-group-append">
-            <span className="input-group-text">%</span>
-          </div>
-        </div>
+        <TextControl prepend="P(A)" type="number" value={this.state.pA} onChange={this.updatePA}/>
+        <TextControl prepend="P(B)" type="number" value={this.state.pB} onChange={this.updatePB}/>
+        <TextControl prepend="P(B|A)" type="number" value={this.state.pBGivenA} onChange={this.updatePB}/>
         <h2>P(A|B):{this.state.pAGivenB}%</h2>
-        </div >
       </div >
     );
   }

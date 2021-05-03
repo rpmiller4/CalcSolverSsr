@@ -53,6 +53,9 @@ export class Home extends Component {
           <li>
             <Link to="/weight-converter">Weight Converter</Link>
           </li>
+          <li>
+            <Link to="/arithmetic-mean-calculator">Arithmetic Mean Calculator</Link>
+          </li>
         </ul>
       </div>
     );

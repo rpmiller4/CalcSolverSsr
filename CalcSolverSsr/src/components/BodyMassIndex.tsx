@@ -44,6 +44,7 @@ const BodyMassIndex = () => {
     const convertInchesToCentimeters = (valueInInches: number) => {
         return 2.54 * valueInInches;
     }
+    
     const renderMiddle = () => {
         return (
             <div>
@@ -59,6 +60,7 @@ const BodyMassIndex = () => {
             </div>
         );
     }
+
     const renderLeft = () => {
         return (
             <div>
@@ -68,8 +70,7 @@ const BodyMassIndex = () => {
                         <span className="input-group-text">Weight</span>
                     </div>
                     <input className="form-control" type="number" min="0" value={weight} onChange={event => {setWeight(+event.target.value)}}/>
-                    <select className="custom-select col-2" value={massUnit}
-                            onChange={event => {setMassUnit(event.target.value)}}>
+                    <select className="custom-select col-2" value={massUnit} onChange={event => {setMassUnit(event.target.value)}}>
                         <option defaultValue={"lbs"} value="lbs">lbs</option>
                         <option value="kg">kg</option>
                     </select>

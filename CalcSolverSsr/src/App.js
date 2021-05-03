@@ -13,7 +13,8 @@ import { ImageAnalyzer } from './components/Analyzers/ImageAnalyzer';
 import { StrongPasswordGenerator } from './components/StrongPasswordGenerator';
 import { TemperatureConverter } from './components/Converters/TemperatureConverter';
 import { DateDifference } from './components/DateCalculators/DateDifference';
-import { WeightConverter } from './components/Converters/WeightConverter'
+import { WeightConverter } from './components/Converters/WeightConverter';
+import { ArithmeticMean } from './components/Statistics/ArithmeticMean';
 import './custom.css'
 
 export default class App extends Component {
@@ -25,7 +26,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data' component={FetchData} />
-          <Route path='/body-mass-index-calculator'> <BodyMassIndex /></Route>
+        <Route path='/body-mass-index-calculator'><BodyMassIndex /></Route>
         <Route path='/percentage-calculator' component={Percentage} />
         <Route path='/bayes-theorem-calculator' component={BayesTheorem} />
         <Route path='/random-number-generator' component={RandomNumberGenerator} />
@@ -35,6 +36,7 @@ export default class App extends Component {
         <Route path='/temperature-converter' component={TemperatureConverter} />
         <Route path='/date-difference-calculator' component={DateDifference} />
         <Route path='/weight-converter' component={WeightConverter} />
+        <Route path='/arithmetic-mean-calculator' component={ArithmeticMean} />
       </Layout>
     );
   }

@@ -58,7 +58,6 @@ export class WeightConverter extends Component {
   }
 
   render() {
-
     return (
       <div>
         <ThreeColumnContainer

@@ -15,6 +15,7 @@ import { TemperatureConverter } from './components/Converters/TemperatureConvert
 import { DateDifference } from './components/DateCalculators/DateDifference';
 import { WeightConverter } from './components/Converters/WeightConverter';
 import { ArithmeticMean } from './components/Statistics/ArithmeticMean';
+import { About } from './pages/About';
 import './custom.css'
 
 export default class App extends Component {
@@ -37,6 +38,7 @@ export default class App extends Component {
         <Route path='/date-difference-calculator' component={DateDifference} />
         <Route path='/weight-converter' component={WeightConverter} />
         <Route path='/arithmetic-mean-calculator' component={ArithmeticMean} />
+        <Route path='/about' component={About} />
       </Layout>
     );
   }

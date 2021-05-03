@@ -65,8 +65,6 @@ export class DateDifference extends Component {
   }
 
   // https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
-  
-
   // a and b are javascript Date objects
   dateDiffInDays(a, b) {
     // Discard the time and time-zone information.

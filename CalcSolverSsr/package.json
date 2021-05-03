@@ -9,6 +9,7 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "@types/react": "^17.0.4",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "exif-js": "^2.3.0",

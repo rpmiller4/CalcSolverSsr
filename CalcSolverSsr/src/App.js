@@ -4,7 +4,7 @@ import { Layout } from './components/Layout/Layout';
 import { FetchData } from './components/FetchData';
 import { Home } from './components/Home';
 import { Counter } from './components/Counter';
-import { BodyMassIndex } from './components/BodyMassIndex';
+import BodyMassIndex from './components/BodyMassIndex';
 import { Percentage } from './components/Percentage';
 import { BayesTheorem } from './components/BayesTheorem';
 import { RandomNumberGenerator } from './components/RandomNumberGenerator';
@@ -26,7 +26,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data' component={FetchData} />
-        <Route path='/body-mass-index-calculator' component={BodyMassIndex} />
+          <Route path='/body-mass-index-calculator'> <BodyMassIndex /></Route>
         <Route path='/percentage-calculator' component={Percentage} />
         <Route path='/bayes-theorem-calculator' component={BayesTheorem} />
         <Route path='/random-number-generator' component={RandomNumberGenerator} />

@@ -1,3 +1,4 @@
+import './custom.css'
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout/Layout';
@@ -16,7 +17,7 @@ import { DateDifference } from './components/DateCalculators/DateDifference';
 import { WeightConverter } from './components/Converters/WeightConverter';
 import { ArithmeticMean } from './components/Statistics/ArithmeticMean';
 import { About } from './pages/About';
-import './custom.css'
+import { StandardDeviation } from './components/Statistics/StandardDeviation';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -38,6 +39,7 @@ export default class App extends Component {
         <Route path='/date-difference-calculator' component={DateDifference} />
         <Route path='/weight-converter' component={WeightConverter} />
         <Route path='/arithmetic-mean-calculator' component={ArithmeticMean} />
+        <Route path='/population-standard-deviation-calculator' component={StandardDeviation} />
         <Route path='/about' component={About} />
       </Layout>
     );

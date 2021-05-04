@@ -56,6 +56,9 @@ export class Home extends Component {
           <li>
             <Link to="/arithmetic-mean-calculator">Arithmetic Mean Calculator</Link>
           </li>
+          <li>
+            <Link to='/population-standard-deviation-calculator'>Population Standard Deviation Calculator</Link>
+          </li>
         </ul>
       </div>
     );

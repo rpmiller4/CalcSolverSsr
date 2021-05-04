@@ -50,6 +50,14 @@ server
         ${helmet.link.toString()}
         <script data-ad-client="ca-pub-0582294658998240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         ${cssLinksFromAssets(assets, 'client')}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMNKL36153"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BMNKL36153');
+        </script>
     </head>
     <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${markup}</div>

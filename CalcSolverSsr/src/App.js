@@ -26,8 +26,6 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
         <Route path='/body-mass-index-calculator'><BodyMassIndex /></Route>
         <Route path='/percentage-calculator' component={Percentage} />
         <Route path='/bayes-theorem-calculator' component={BayesTheorem} />

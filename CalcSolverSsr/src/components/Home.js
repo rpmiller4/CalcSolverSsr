@@ -57,7 +57,10 @@ export class Home extends Component {
             <Link to="/arithmetic-mean-calculator">Arithmetic Mean Calculator</Link>
           </li>
           <li>
-            <Link to='/population-standard-deviation-calculator'>Population Standard Deviation Calculator</Link>
+            <Link to="/population-standard-deviation-calculator">Population Standard Deviation Calculator</Link>
+          </li>
+          <li>
+            <Link to="/twin-paradox-under-special-relativity-calculator">Twin Paradox Under Special Relativity Calculator</Link>
           </li>
         </ul>
       </div>

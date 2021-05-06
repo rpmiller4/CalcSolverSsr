@@ -2,9 +2,7 @@ import './custom.css'
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout/Layout';
-import { FetchData } from './components/FetchData';
 import { Home } from './components/Home';
-import { Counter } from './components/Counter';
 import BodyMassIndex from './components/BodyMassIndex';
 import { Percentage } from './components/Percentage';
 import { BayesTheorem } from './components/BayesTheorem';
@@ -18,6 +16,7 @@ import { WeightConverter } from './components/Converters/WeightConverter';
 import { ArithmeticMean } from './components/Statistics/ArithmeticMean';
 import { About } from './pages/About';
 import { StandardDeviation } from './components/Statistics/StandardDeviation';
+import { TwinParadoxUnderSpecialRelativity } from './components/Calculators/TwinParadoxUnderSpecialRelativity';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -39,6 +38,7 @@ export default class App extends Component {
         <Route path='/arithmetic-mean-calculator' component={ArithmeticMean} />
         <Route path='/population-standard-deviation-calculator' component={StandardDeviation} />
         <Route path='/about' component={About} />
+        <Route path='/twin-paradox-under-special-relativity-calculator' component={TwinParadoxUnderSpecialRelativity} />
       </Layout>
     );
   }

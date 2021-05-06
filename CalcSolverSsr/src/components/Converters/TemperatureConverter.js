@@ -8,7 +8,7 @@ export class TemperatureConverter extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { celsius: 0, fahrenheit: 0 };
+    this.state = { celsius: 0, fahrenheit: 32 };
     this.updateCelsius = this.updateCelsius.bind(this);
     this.updateFahrenheit = this.updateFahrenheit.bind(this);
   }
@@ -52,7 +52,10 @@ export class TemperatureConverter extends Component {
           <meta name='description' content='Convert between Fahrenheit And Celsius easily.' />
         </Helmet>
         <h3>Convert between Celsius and Fahrenheit</h3>
-        <p></p>
+        <p>32 degrees Fahreneheit is defined as the freezing point of water and is equivalent to 0 degrees Celsius. 212 degrees Fahrenheit is defined as the temperature at which water boils and is equivalent to 100 degrees Celsius.</p>
+        <p>The Celsius scale is used around the world. However, Fahrenheit is preferred in the United States, the Bahamas, Belize, Cayman Islands and Palau.</p>
+        <p>Adults have a low-grade fever at 100.4&deg;F or 38&deg;C. A temperature of 103&deg;F or 39.4&deg;C is considered a high-grade fever in adults.</p>
+        <p>Temperate climates per the Köppen climate classification range between a mean temperature of −3 °C or 26.6 °F but below 18 °C or 64.4 °F.</p>
       </div>
     );
   }

@@ -32,7 +32,7 @@ fs.readFile('./src/App.js', 'utf8' , (err, data) => {
 
   const content = 'Some content!'
   
-  fs.writeFile('./public/sitemap.xml', sitemapContents, { flag: 'w' }, err => {
+  fs.writeFile('./build/public/sitemap.xml', sitemapContents, { flag: 'w' }, err => {
     if (err) {
         console.error(err)
     }

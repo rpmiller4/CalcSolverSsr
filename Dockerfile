@@ -8,12 +8,12 @@ ENV NODE_ENV production
 COPY CalcSolverSsr/package.json ./
 COPY CalcSolverSsr/sitemap-builder.js ./
 RUN npm install --production
-RUN npm run sitemap
+
 COPY CalcSolverSsr/src ./src
 COPY CalcSolverSsr/public ./public
 
 RUN npm run build
-
+RUN npm run sitemap
 
 
 FROM node:alpine

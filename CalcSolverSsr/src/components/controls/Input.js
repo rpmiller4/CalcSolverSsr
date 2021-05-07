@@ -2,10 +2,10 @@ import React from 'react';
 
 function inputControl(props) {
   if (props && props.onChange) {
-    return (<input className="form-control" type={props.type} value={props.value} onChange={props.onChange} />);
+    return (<input className="form-control" type={props.type} value={props.value} onChange={props.onChange} readonly={props.readonly}/>);
   }
   else{
-    return (<input className="form-control" type={props.type} value={props.value} onChange={()=>{}}/>);
+    return (<input className="form-control" type={props.type} value={props.value} onChange={()=>{}} readonly={props.readonly}/>);
   }
 }
 

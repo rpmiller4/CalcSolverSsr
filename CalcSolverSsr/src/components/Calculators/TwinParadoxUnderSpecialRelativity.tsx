@@ -11,7 +11,7 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
     super(props);
     this.state = { 
       velocityAsPercentageOfC: 0,
-      lorentzFactor: 0,
+      lorentzFactor: 1,
       velocityInKph: 0,
       velocityInMph: 0,
       contractedElapsedTime: 1,
@@ -89,6 +89,10 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
     return dilatedElapsedTime * lorentzFactor;
   }
 
+  roundNumber = (num: number, dec: number) => {
+    return Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
+  }
+
 
   renderLeft() {
     return (
@@ -101,6 +105,10 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
         <TextControl prepend="Velocity in mph" type="number" value={this.state.velocityInMph} append="mph" readonly="true" />
         <TextControl prepend="Earth Observer Elapsed Time" type="number" value={this.state.dilatedElapsedTime} append="Tb" onChange={this.updateElapsedTime} />
         <TextControl prepend="Spaceship Traveler Elapsed Time" type="number" value={this.state.contractedElapsedTime} append="Ta" onChange={this.updateTravelerElapsedTime}/>
+        <p></p>
+        <h4>Explanation</h4>
+        <p>At {this.roundNumber(this.state.velocityAsPercentageOfC,0)}% of the speed of light (c), the lorentz factor or gamma is {this.roundNumber(this.state.lorentzFactor,4)}. That means a twin traveling through space will age at {this.roundNumber(1 / this.state.lorentzFactor * 100,4)}% the rate of its twin at relative rest on earth. If {this.roundNumber(this.state.dilatedElapsedTime,4)} units of time have passed on earth, {this.roundNumber(this.state.contractedElapsedTime,2)} units of time will pass for the space twin. For this to be realistic, the space twin needs to travel at {this.roundNumber(this.state.velocityInMph/1000,0)}K miles per hour ({this.roundNumber(this.state.velocityInKph/1000,0)}K kilometers per hour).</p>
+        <p>Interestingly, the spaceship - and everything in it - will also contract in length by {this.roundNumber(1 / this.state.lorentzFactor * 100,2)}%.</p>
       </div >
     );
   }

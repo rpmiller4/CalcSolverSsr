@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, Component } from "react";
 import { ThreeColumnContainer } from "../Layout/ThreeColumnContainer";
 import { TextControl } from "../controls/Input";
 import { Helmet } from "react-helmet";
@@ -14,7 +14,7 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
       lorentzFactor: 0,
       velocityInKph: 0,
       velocityInMph: 0,
-      elapsedTime: 1,
+      contractedElapsedTime: 1,
       dilatedElapsedTime: 1 
     };
 
@@ -24,16 +24,20 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
     this.calculateVelocityAsPercentageOfC = this.calculateVelocityAsPercentageOfC.bind(this); 
     this.calculateTimeDilation = this.calculateTimeDilation.bind(this);
     this.updateElapsedTime = this.updateElapsedTime.bind(this);
+    this.updateTravelerElapsedTime = this.updateTravelerElapsedTime.bind(this);
+    this.calculateTimeContraction = this.calculateTimeContraction.bind(this); 
   }
-  
+
+
 
   updateVelocity(e) {
     var velocityAsPctOfC = e.target.value;
     var lorentzF = this.calculateLorentzFactor(velocityAsPctOfC);
     var kph = this.convertToKmh(velocityAsPctOfC);
     var mph = this.convertToMph(kph)
-    var dilatedTime = this.calculateTimeDilation(this.state.elapsedTime);
-    this.setState({ velocityAsPercentageOfC: velocityAsPctOfC, lorentzFactor: lorentzF, velocityInKph: kph, velocityInMph: mph, dilatedElapsedTime: dilatedTime});
+    //var dilatedTime = 
+    this.setState({ velocityAsPercentageOfC: velocityAsPctOfC, lorentzFactor: lorentzF, velocityInKph: kph, velocityInMph: mph},
+      () => this.setState({dilatedElapsedTime: this.calculateTimeDilation(this.state.contractedElapsedTime, lorentzF)}));
   }
 
   updateLorentzFactor(e) {
@@ -41,14 +45,21 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
     var velocityAsPctOfC = this.calculateVelocityAsPercentageOfC(lorentzF);
     var kph = this.convertToKmh(velocityAsPctOfC);
     var mph = this.convertToMph(kph)
-    var dilatedTime = this.calculateTimeDilation(this.state.elapsedTime);
-    this.setState({ velocityAsPercentageOfC: velocityAsPctOfC, lorentzFactor: lorentzF, velocityInKph: kph, velocityInMph: mph, dilatedElapsedTime: dilatedTime});
+    //var dilatedTime = this.calculateTimeDilation(this.state.elapsedTime);
+    this.setState({ velocityAsPercentageOfC: velocityAsPctOfC, lorentzFactor: lorentzF, velocityInKph: kph, velocityInMph: mph},
+      () => this.setState({dilatedElapsedTime: this.calculateTimeDilation(this.state.contractedElapsedTime, lorentzF)}));
+  }
+
+  updateTravelerElapsedTime(e) {
+    var elapsed = e.target.value;
+    this.setState({contractedElapsedTime: elapsed},
+      () => this.setState({dilatedElapsedTime: this.calculateTimeDilation(this.state.contractedElapsedTime, this.state.lorentzFactor)}));
   }
 
   updateElapsedTime(e) {
-    var elapsed = e.target.value;
-    var dilatedTime = this.calculateTimeDilation(elapsed);
-    this.setState({ elapsedTime: elapsed, dilatedElapsedTime: dilatedTime });
+    var dilatedTime = e.target.value;
+    this.setState({ dilatedElapsedTime: dilatedTime },
+     () => this.setState({contractedElapsedTime: this.calculateTimeContraction(this.state.dilatedElapsedTime, this.state.lorentzFactor)}));
   }
 
   calculateLorentzFactor(velocityAsPercentageOfC: number) {
@@ -68,9 +79,14 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
     return kilometersPerHour * 0.621371;
   }
 
-  calculateTimeDilation(elapsedTime: number)
+  calculateTimeContraction(contractedElapsedTime: number, lorentzFactor: number)
   {
-    return elapsedTime / this.state.lorentzFactor;
+    return contractedElapsedTime / lorentzFactor;
+  }
+
+  calculateTimeDilation(dilatedElapsedTime: number, lorentzFactor: number)
+  {
+    return dilatedElapsedTime * lorentzFactor;
   }
 
 
@@ -81,10 +97,10 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
         <p/>
         <TextControl prepend="Relative velocity as % of c" type="number" value={this.state.velocityAsPercentageOfC} append="v" onChange={this.updateVelocity} />
         <TextControl prepend="Lorentz Factor" type="number" value={this.state.lorentzFactor} append="gamma" onChange={this.updateLorentzFactor} />
-        <TextControl prepend="Velocity in km/h" type="number" value={this.state.velocityInKph} append="km/h" readonly/>
-        <TextControl prepend="Velocity in mph" type="number" value={this.state.velocityInMph} append="mph" readonly />
-        <TextControl prepend="Earth Observer Elapsed Time" type="number" value={this.state.elapsedTime} append="Tb" onChange={this.updateElapsedTime} />
-        <TextControl prepend="Spaceship Traveler Elapsed Time" type="number" value={this.state.dilatedElapsedTime} append="Ta" readonly/>
+        <TextControl prepend="Velocity in kph" type="number" value={this.state.velocityInKph} append="kph" readonly="true" />
+        <TextControl prepend="Velocity in mph" type="number" value={this.state.velocityInMph} append="mph" readonly="true" />
+        <TextControl prepend="Earth Observer Elapsed Time" type="number" value={this.state.dilatedElapsedTime} append="Tb" onChange={this.updateElapsedTime} />
+        <TextControl prepend="Spaceship Traveler Elapsed Time" type="number" value={this.state.contractedElapsedTime} append="Ta" onChange={this.updateTravelerElapsedTime}/>
       </div >
     );
   }

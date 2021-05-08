@@ -108,7 +108,7 @@ export class TwinParadoxUnderSpecialRelativity extends Component<{}, { [key: str
         <p></p>
         <h4>Explanation</h4>
         <p>At {this.roundNumber(this.state.velocityAsPercentageOfC,0)}% of the speed of light (c), the lorentz factor or gamma is {this.roundNumber(this.state.lorentzFactor,4)}. That means a twin traveling through space will age at {this.roundNumber(1 / this.state.lorentzFactor * 100,4)}% the rate of its twin at relative rest on earth. If {this.roundNumber(this.state.dilatedElapsedTime,4)} units of time have passed on earth, {this.roundNumber(this.state.contractedElapsedTime,2)} units of time will pass for the space twin. For this to be realistic, the space twin needs to travel at {this.roundNumber(this.state.velocityInMph/1000,0)}K miles per hour ({this.roundNumber(this.state.velocityInKph/1000,0)}K kilometers per hour).</p>
-        <p>Interestingly, the spaceship - and everything in it - will also contract in length by {this.roundNumber(1 / this.state.lorentzFactor * 100,2)}%.</p>
+        <p>Interestingly, the spaceship - and everything in it - will also contract in length to {this.roundNumber(1 / this.state.lorentzFactor * 100,2)}% of its original length.</p>
       </div >
     );
   }

@@ -17,6 +17,8 @@ import { ArithmeticMean } from './components/Statistics/ArithmeticMean';
 import { About } from './pages/About';
 import { StandardDeviation } from './components/Statistics/StandardDeviation';
 import { TwinParadoxUnderSpecialRelativity } from './components/Calculators/TwinParadoxUnderSpecialRelativity';
+import { RectangularArea } from './components/Calculators/RectangularArea';
+import { EllipticalArea } from './components/Calculators/EllipticalArea';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -39,6 +41,8 @@ export default class App extends Component {
         <Route path='/population-standard-deviation-calculator' component={StandardDeviation} />
         <Route path='/about' component={About} />
         <Route path='/twin-paradox-under-special-relativity-calculator' component={TwinParadoxUnderSpecialRelativity} />
+        <Route path='/rectangular-area-calculator' component={RectangularArea} />
+        <Route path='/elliptical-area-calculator' component={EllipticalArea} />
       </Layout>
     );
   }

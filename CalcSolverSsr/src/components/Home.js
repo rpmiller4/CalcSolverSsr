@@ -62,6 +62,9 @@ export class Home extends Component {
           <li>
             <Link to="/twin-paradox-under-special-relativity-calculator">Twin Paradox Under Special Relativity Calculator</Link>
           </li>
+          <li>
+            <Link to="/rectangular-area-calculator">Rectangular Area Calculator</Link>
+          </li>
         </ul>
       </div>
     );

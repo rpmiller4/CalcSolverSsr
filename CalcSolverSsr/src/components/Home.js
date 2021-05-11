@@ -69,7 +69,7 @@ export class Home extends Component {
             <Link to="/elliptical-area-calculator">Elliptical Area Calculator</Link>
           </li>
           <li>
-            <Link to="/pythegorean-theorem-calculator">Pythegorean Theorem Calculator</Link>
+            <Link to="/pythagorean-theorem-calculator">Pythagorean Theorem Calculator</Link>
           </li>
         </ul>
       </div>
